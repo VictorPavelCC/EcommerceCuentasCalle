@@ -34,11 +34,12 @@
 }
  
 .menu-item {
-    padding: 5px;
+    padding: 10px;
     display: inline-block;
     text-decoration: none;
     text-shadow:  0.1cm 0.1cm 0.1cm black;
     margin: 10px;
+    transition: all 1s;
 }
 
 

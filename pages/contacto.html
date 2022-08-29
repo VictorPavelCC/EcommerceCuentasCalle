@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="menu" id="menu">
+        <nav>
+            <img src="../assets/logo.png" alt="Logo" class="logo">
+            <ul>
+                <li class="menu-item"><a href="../index.html">Inicio</a></li>
+                <li class="menu-item"><a href="productos.html">Productos</a></li>
+                <li class="menu-item"><a href="pcarmada.html">PC armada</a></li>
+                <li class="menu-item"><a href="nosotros.html">Nosotros</a></li>
+                <li class="menu-item"><a href="#">Contacto</a></li>
+                <li class="menu-item"><a href="https://www.google.com.ar/" target="_blank">Ir a Google</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h3 class="titulo">Contacto</h3>
+
+    <form action="#" class="formulario">
+        <label for="nombre" class="datoPersonales"> Nombre:
+            <input type="text" placeholder="Introduce tu nombre">
+        </label>
+        <label for="email" class="datoPersonales"> E-mail:
+            <input type="email" placeholder="E-Mail">
+        </label>
+        <div id="sexo"> <p>Sexo:</p>
+            <div>Hombre
+                <input type="radio" name="sexo" value="Hombre">
+            </div>
+           <div>Mujer
+                <input type="radio" name="sexo" value="Mujer">
+           </div>
+            <div>Otro
+                <input type="radio" name="sexo" value="Otro">
+            </div>
+        </div>
+        <div id="consulta">
+        <p>Tipo de Consulta</p>
+            <select name="consulta">
+                <option value="reclamo">Reclamo de Pedido</option>
+                <option value="pedido">Consulta de Pedido</option>
+                <option value="dudas">Dudas</option>
+            </select>
+        </div>
+        <label for="mensaje" id="mensaje">Mensaje / Observaciones:
+            <textarea name="mesaje" id="mensaje" cols="40" rows="10"></textarea>
+        </label>
+        <div>¿Deseas recibir mas mail sobre novedades?
+        <input type="checkbox" name="acepta" value="1"></div>
+        <div>
+            <input type="submit" value="Enviar" class="boton">
+            <input type="reset" value="Borrar" class="boton">  
+        </div>  
+    </form>
+
+    <footer id="footer">
+        <img src="../assets/logo.png" alt="Logo" class="logo">
+        <h4>Derechos reservados&#169 para Hardcity</h4>
+        <h4>contacto</h4>
+    </footer>
+</body>
+</html>

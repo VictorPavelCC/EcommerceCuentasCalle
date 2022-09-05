@@ -9,6 +9,12 @@
 
 }
 
+.colorEF:hover{
+    background-color: #ffc400de;
+    border-radius: 10px;
+    transition: .8s;
+}
+
 
 
 .material-symbols-outlined {
@@ -47,23 +53,15 @@ nav div ul li{
 }
  
 
-
-
-.menu-item:hover{
-    background-color: #ffc400de;
-    border-radius: 10px;
-}
-
 /* index */
 
 .banner{
     color: #ff3300;
     padding: 10px;
     margin: 20px;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 700;
+    
     background-image: url("../assets/banner.jpg");
-    text-shadow:  0.1cm 0.1cm 0.1cm black;
+    
     background-size: cover;
     
 
@@ -164,6 +162,7 @@ nav div ul li{
     color: #ff3300;
     font-family: "roboto Mono", monospace;
     padding: 20px 10px 20px 10px;
+    font-weight: 700;
     background-color:  #690BE0;
     font-size: 25px;
     text-shadow:  0.1cm 0.1cm 0.1cm black;

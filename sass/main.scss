@@ -1,0 +1,36 @@
+/*variables*/
+
+@import "vars";
+@import "headerFooter";
+
+
+.titulo {
+    
+    font: {
+        size: 25px;
+        family: $FontTexto;
+        weight: 700;
+    }  
+    
+    text: {
+        shadow: $Sombra;
+        align: center;
+    }
+    color: $ColorTitulo;
+    background-color: $ColorFondo;
+    padding: 20px 10px 20px 10px;
+}
+
+#nosotros {
+    font: {
+        family:$FontTexto;
+        size: 13px;
+    }
+    padding: 20px;
+    text-align: center;
+}
+
+iframe{
+    margin: 20px auto 10px auto;
+    display: block;
+}

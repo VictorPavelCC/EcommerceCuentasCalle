@@ -1,0 +1,65 @@
+
+@import "vars";
+
+
+
+.colorEF:hover{
+    background-color: $ColorEfect;
+    border-radius: 10px;
+    transition: .8s;
+}
+
+.menu{
+
+    nav{
+        background-color: $ColorHF;
+        div{
+            img{
+                padding-right: 15px;
+            }
+            
+            div{
+            
+                ul{
+                    li{               
+                        a{
+                            color: $ColorTitulo;
+                            text-shadow: $Sombra;
+                            font: {
+                                size: 23px;
+                                weight: 700;
+                                family: $FontTexto;
+                                
+                            }
+                            
+                        }
+                    }
+                }
+
+            }
+            
+        }
+
+    }
+        
+}
+
+
+.fondoP {
+    background-color: #313892;
+    color: #ff3300;
+}
+
+#footer{
+    position: relative;
+    bottom: 0%;
+    background-color: $ColorHF;
+    font: {
+        size: 10px;
+        family: $FontTexto;
+    }
+    text: {
+        align: center;
+        shadow: $Sombra;
+    }
+}

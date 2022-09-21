@@ -5,6 +5,11 @@
 @import "pages";
 @import "responsive";
 
+body{
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto auto 1fr auto;
+}
 
 .titulo {
     

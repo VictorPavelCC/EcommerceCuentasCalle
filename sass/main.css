@@ -117,6 +117,12 @@
     font-size: 20px;
   }
 }
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto auto 1fr auto;
+}
+
 .titulo {
   font-size: 25px;
   font-family: "roboto Mono", monospace;

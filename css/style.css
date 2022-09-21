@@ -9,16 +9,12 @@
 
 }
 
+body{
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
 .sombra{
     text-shadow:  0.1cm 0.1cm 0.1cm black
 }
-
-
-
-
-/* index */
-
-
-
-/* responsive index y productosPC */
-

@@ -2,8 +2,8 @@
 
 @import "vars";
 @import "headerFooter";
-@import "responsive";
 @import "pages";
+@import "responsive";
 
 
 .titulo {
@@ -23,14 +23,6 @@
     padding: 20px 10px 20px 10px;
 }
 
-#nosotros {
-    font: {
-        family:$FontTexto;
-        size: 13px;
-    }
-    padding: 20px;
-    text-align: center;
-}
 
 iframe{
     margin: 20px auto 10px auto;

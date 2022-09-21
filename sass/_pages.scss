@@ -14,7 +14,6 @@
 
 }
 
-
 .producto {
         img{
             width: auto;
@@ -48,4 +47,13 @@
 
 .formulario1{
     font-family: "roboto Mono", monospace;
+}
+
+.nosotros{
+    font: {
+        family:$FontTexto;
+        size: 13px;
+    }
+    padding: 20px;
+    text-align: center;
 }

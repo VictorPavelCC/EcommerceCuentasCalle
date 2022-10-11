@@ -50,6 +50,15 @@
     color: #ff3300;
 }
 
+.fondoB{
+    background-color: #313892;
+    color: #ff3300;
+}
+.fondoB:HOVER{
+    color: #313892;
+    background-color: $ColorEfect;
+}
+
 #footer{
     position: relative;
     bottom: 0%;

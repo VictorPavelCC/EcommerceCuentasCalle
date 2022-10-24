@@ -38,19 +38,19 @@ while(salir != 1){
     }
     else{
         if(PrecioDeseado > 100000){
-            alert ("tenemos una computadora a $120.000 de Gamma Alta!")
+            alert ("tenemos una computadora a $120.000 (sin iva) de Gamma Alta!")
             IVACalc(pcalta,iva);
             alert("Con iva el precio final es de: "+precioFinal)
             salir = 1;
         }
         if(PrecioDeseado < 100000 && PrecioDeseado > 40000 ){
-            alert ("tenemos una computadora a $80.000 de Gamma Media!")
+            alert ("tenemos una computadora a $80.000 (sin iva) de Gamma Media!")
             IVACalc(pcmedia,iva);
             alert("Con iva el precio final es de: "+precioFinal)
             salir = 1;
         }
         else{
-            alert ("tenemos una computadora a $20.000 de Gamma Media!")
+            alert ("tenemos una computadora a $20.000 (sin iva) de Gamma Media!")
             IVACalc(pcbaja,iva);
             alert("Con iva el precio final es de: "+precioFinal)
             salir = 1;

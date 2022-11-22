@@ -40,6 +40,11 @@
                   <li class="nav-item colorEF">
                     <a class="nav-link px-3" href="./pages/contacto.html">Contacto</a>
                   </li>
+                  <li class="nav-item colorEF">
+                    
+                    <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar" id="btncarrito">Carrito</button>
+
+                  </li>
                 </ul>
               </div>
             </div>
@@ -74,9 +79,9 @@
 
     <h1 class="titulo">Conoce y descubrí las ofertas y productos que te podemos ofrecer con HardCity</h1>
     <h3 class="banner titulo">NOVEDADES</h3>
-    <section class="container-fluid text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-3 col-sm-6 py-3 align-self-center">
+    <section class="container-fluid text-center" id="contenedor">
+        <div class="row justify-content-center" id="contenedorNov">
+         <!--<div class="col-md-3 col-sm-6 py-3 align-self-center">
                 <div class="producto">
                     <img src="./assets/gtx1660super6gb.jpg" alt="Placa Gtx 1660" class="imgProductos">
                     <p>GEFORCE GTX 1660 SUPER 6GB OC</p>
@@ -110,8 +115,8 @@
                 </div>
             </div>
 
-        </div>
-        <div class="row align-items-center">
+        </div> -->
+        <!-- <div class="row align-items-center">
             <div class="col-md-3 col-sm-6 py-3">
                 <div class="producto">
                     <img src="./assets/micro-amd-ryzen-5-5600g-0.jpg" alt="Ryzen 5 5600g">
@@ -178,26 +183,35 @@
             
             
         </div>
+ -->
 
-
-        <div class="modal fade" tabindex="-1" id="comprar">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+        <div class="modal carrito" tabindex="1" id="comprar">
+          <div class="modal-dialog modal-dialog-centered ModalCont">
+            <div class="modal-content modalCarrito">
               <div class="modal-header">
                 <h5 class="modal-title">Carrito</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cerrarCarrito"></button>
               </div>
-              <div class="modal-body">
-                <p>Tu compra ha sido añadida al carrito</p>
+              <div class="modal-body formulario1" id="carritoContenido">
+                <!-- <div class="productCarrito">
+                  <p>producto</p>
+                  <p>precio$$</p>
+                  <img src="./assets/delete.png" class="icono" id="borrar"></img>
+                </div>
+ -->
+
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn fondoB" data-bs-dismiss="modal">Entendido</button>
+              <div class="modal-footer bajo">
+                <p>Precio Total: $ <span id="precioTotal"></span></p>
+
+
+                <button type="button" class=" btn fondoB" id="vaciaCarrito"data-bs-dismiss="modal">Vaciar Carrito</button>
                 
               </div>
             </div>
           </div>
         </div>
-    </section>
+   </section>
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="facebook" viewBox="0 0 16 16">
@@ -226,6 +240,9 @@
         <li class="ms-3"><a class="text-muted" href="https://es-la.facebook.com/"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
       </ul>
     </footer>
+
+    <script src="./js/modal.js"></script>
+    <script src="./js/productos.js"></script>
 
     <script src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

@@ -80,8 +80,41 @@
   background-color: black;
 }
 
+.carrito {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icono {
+  width: 8%;
+}
+
+.productCarrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .formulario1 {
   font-family: "roboto Mono", monospace;
+}
+
+.bajo {
+  justify-content: space-between;
 }
 
 .nosotros {

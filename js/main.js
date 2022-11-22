@@ -5,7 +5,7 @@ mi proyecto trata de un login de usuario, y un carrito para la pagina que tengo 
 
 */
 
-const productos =[
+/* const productos =[
     {
         id:1,
         name:"pc bajos Recursos", 
@@ -27,7 +27,7 @@ const productos =[
 
 ];
 
-const carrito = [];
+
 const usuariosReg = [];
 const usuario1={
     nombre:"matias",
@@ -149,5 +149,87 @@ while(salir != 1){
     }
     
 
+}
+ */
+//DOM
+const contNovedades = document.querySelector(`#contenedorNov`)
+const contenedorCarrito = document.querySelector(`#carritoContenido`)
+const contadorPrecioTotal = document.querySelector(`#precioTotal`)
+
+
+console.log(productosStock)
+productosStock.forEach((producto) => {
+    const div = document.createElement(`div`)
+    div.className = 'col-md-3 col-sm-6 py-3 align-self-center'
+    div.innerHTML= `
+    <div class="producto">
+        <img src="${producto.img}" alt="intelI310th">
+        <p>${producto.name}</p>
+        <p class="precio">${producto.precio}</p>
+    </div>
+    `
+    const button = document.createElement('button')
+    button.className = "btn fondoB boton"
+    button.innerHTML = `Agregar`
+
+    button.addEventListener('click', () => {
+        agregarCarrito(producto.id)
+    })
+
+    div.append(button)
+    contNovedades.append (div)
+})
+
+
+//Carrito 
+const carrito = JSON.parse(localStorage.getItem("productosAnteriores")) ||[]
+
+console.log(carrito)
+//const carritoAnteriorJS = 
+
+
+
+const renderCarrito = () => {
+    actCarrito()
+    TotalCarrito()
+    guardarC("productosAnteriores",JSON.stringify(carrito))
+}
+
+const agregarCarrito = (id) => {
+    
+    const producto = productosStock.find((item) => item.id === id)
+    carrito.push(producto)
+    renderCarrito()    
+}
+
+
+
+
+const guardarC = (key,value) => {localStorage.setItem(key,value)}
+
+const actCarrito = () => {
+    contenedorCarrito.innerHTML = ''
+    carrito.forEach((producto) => {
+    const div = document.createElement ('div')
+    div.className = "productCarrito"
+    div.innerHTML = `
+    <div class="productCarrito">
+      <p>${producto.name}</p>
+      <p>${producto.precio}</p>
+      <img src="./assets/delete.png" class="icono" id="borrar"></img>
+    </div>
+    `
+    contenedorCarrito.append(div)
+    })
+} 
+
+
+const TotalCarrito = () =>{
+    let total = 0
+
+    carrito.forEach ((producto) => {
+        total+= producto.precio
+    })
+    contadorPrecioTotal.innerText = total
 }
 

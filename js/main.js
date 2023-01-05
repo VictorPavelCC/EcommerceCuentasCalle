@@ -5,231 +5,219 @@ mi proyecto trata de un login de usuario, y un carrito para la pagina que tengo 
 
 */
 
-/* const productos =[
-    {
-        id:1,
-        name:"pc bajos Recursos", 
-        precio:20000,
-        img:"../assets/gtx1660super6gb.jpg"
-    },
-    {
-        id:2,
-        name:"Pc gamma Media", 
-        precio:80000,
-        img:"../assets/video-geforce-rtx-3050-8gb-msi-ventus-2x-oc-0.jpg"
-    },
-    {
-        id:3,
-        name:"PC gamma Alta", 
-        precio:120000,
-        img:"../assets/video-geforce-rtx-3050-8gb-msi-ventus-2x-oc-0.jpg"
-    }
 
-];
-
-
-const usuariosReg = [];
-const usuario1={
-    nombre:"matias",
-    apellido:"montes",
-    email: "ejemplo@gmail.com"
-};
-
-
-let Nombre = "a"
-let Apellido = "a"
-let email = "a"
-
-function ingresarUser (){
-
-}
-
-function comprobarusuario(nombre,apellido,email){
- if (nombre == usuario1.nombre && apellido == usuario1.apellido && email == usuario1.email){
-    alert("Usuario encontrado")
- }
- else{
-    return false
- }
- 
-};
-
-function usuario(nombre,apellido,email){
-    this.nombre= nombre;
-    this.apellido = apellido;
-    this.email = email;
-}
-
-
-
-alert("Bienvenido a HardCity");
-alert("Ingrese su nombre, apellido y email");
-Nombre = prompt("Ingrese su Nombre");
-Apellido = prompt("Ingrese su Apellido");
-email = prompt("escriba su email");
-
-if(comprobarusuario(Nombre,Apellido,email)==false){
-    alert("Usuario no encontrado")
-    alert("vamos a generar su usuario")
-    Nombre = prompt("Ingrese su Nombre");
-    if(Nombre ==""){
-        alert ("Debe ingresar su nombre para generar el usuario")
-    }
-    
-    Apellido = prompt("Ingrese su Apellido");
-    if(Apellido == "")
-    {
-        alert("Debe ingresar su apellido para generar el usuario")
-    }
-    email = prompt("Ingrese su email");
-    if(email == "")
-    {
-        alert("Debe ingresar su email para generar el usuario")
-    }
-
-    const usuario2= new usuario(Nombre,Apellido,email)
-    console.log(usuario2)
-}
-alert("Bienvenido " + Nombre + " " + Apellido + "!")
-
-alert ("Podemos ofrecerte una computadora a buen precio")
-
-let PrecioDeseado = 0;
-let precioFinal = 0;
-let pcmedia = 80000;
-let pcalta = 120000;
-let pcbaja = 20000;
-const iva = 0.21;
-let salir = 0;
-
-const sumarCarrito= (id) => {
-    const producto = productos.find( (prod) => prod.id === id )
-    carrito.push(producto)
-    console.log(carrito)
-}
-
-function IVACalc (precio, ivanum){
-    precioFinal = precio + precio*iva;
-}
-
-
-function promocion(precio){
-    if(PrecioDeseado > 100000){
-        alert ("tenemos una computadora a $120.000 (sin iva) de Gamma Alta!")
-        IVACalc(pcalta,iva);
-        alert("Con iva el precio final es de: "+precioFinal)
-        sumarCarrito(3)
-        salir = 1;
-    }
-    if(PrecioDeseado < 100000 && PrecioDeseado > 20000 ){
-        alert ("tenemos una computadora a $80.000 (sin iva) de Gamma Media!")
-        IVACalc(pcmedia,iva);
-        alert("Con iva el precio final es de: "+precioFinal)
-        sumarCarrito(2)
-        salir = 1;
-    }
-    if(PrecioDeseado<20000){
-        alert ("tenemos una computadora a $20.000 (sin iva) de Gamma Baja!")
-        IVACalc(pcbaja,iva);
-        alert("Con iva el precio final es de: "+precioFinal)
-        sumarCarrito(1)
-        salir = 1;
-    }
-
-}
-
-
-while(salir != 1){
-    PrecioDeseado= prompt ("Ingrese el precio deseado o si queres salir ingresa 1")
-    if(PrecioDeseado == 1){
-        salir = 1;
-    }
-    else{
-        promocion(PrecioDeseado)
-    }
-    
-
-}
- */
 //DOM
-const contNovedades = document.querySelector(`#contenedorNov`)
-const contenedorCarrito = document.querySelector(`#carritoContenido`)
-const contadorPrecioTotal = document.querySelector(`#precioTotal`)
+let carrito =  [];
 
+const contenedor = document.querySelector("#contenedor");
+const carritoContenedor = document.querySelector("#carritoContenedor");
+const vaciarCarrito = document.querySelector("#vaciarCarrito");
+const precioTotal = document.querySelector("#precioTotal");
+const activarFuncion = document.querySelector("#activarFuncion");
+const procesarCompra = document.querySelector("#procesarCompra");
+const totalProceso = document.querySelector("#totalProceso");
+const formulario = document.querySelector('#procesar-pago')
 
-console.log(productosStock)
-productosStock.forEach((producto) => {
-    const div = document.createElement(`div`)
-    div.className = 'col-md-3 col-sm-6 py-3 align-self-center'
-    div.innerHTML= `
-    <div class="producto">
-        <img src="${producto.img}" alt="intelI310th">
-        <p>${producto.name}</p>
-        <p class="precio">${producto.precio}</p>
-    </div>
-    `
-    const button = document.createElement('button')
-    button.className = "btn fondoB boton"
-    button.innerHTML = `Agregar`
-
-    button.addEventListener('click', () => {
-        agregarCarrito(producto.id)
-    })
-
-    div.append(button)
-    contNovedades.append (div)
-})
-
-
-//Carrito 
-const carrito = JSON.parse(localStorage.getItem("productosAnteriores")) ||[]
-
-console.log(carrito)
-//const carritoAnteriorJS = 
-
-
-
-const renderCarrito = () => {
-    actCarrito()
-    TotalCarrito()
-    guardarC("productosAnteriores",JSON.stringify(carrito))
+if (activarFuncion) {
+  activarFuncion.addEventListener("click", procesarPedido);
 }
 
-const agregarCarrito = (id) => {
+document.addEventListener("DOMContentLoaded", () => {
+  carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  mostrarCarrito( );
+  document.querySelector("#activarFuncion").click(procesarPedido);
+});
+if(formulario){
+  formulario.addEventListener('submit', enviarCompra)
+}
+
+
+if (vaciarCarrito) {
+  vaciarCarrito.addEventListener("click", () => {
+    carrito.length = [];
+    mostrarCarrito();
+  });
+}
+
+if (procesarCompra) {
+  procesarCompra.addEventListener("click", () => {
+    if (carrito.length === 0) {
+      Swal.fire({
+        title: "¡Tu carrito está vacio!",
+        text: "Compra algo para continuar con la compra",
+        icon: "error",
+        confirmButtonText: "Aceptar",
+      });
+    } else {
+      location.href = "./pages/compra.html";
+    }
+  });
+}
+
+stockProductos.forEach((prod) => {
+  const { id, nombre, precio, img, cantidad} = prod;
+  if (contenedor) {
+    contenedor.innerHTML += `
+    <div class="card mt-3" style="width: 18rem;">
+    <img class="card-img-top mt-2" src="${img}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">${nombre}</h5>
+      <p class="card-text">Precio: ${precio}</p>
+      <p class="card-text">Cantidad: ${cantidad}</p>
+      <button class="btn fondoP" onclick="agregarProducto(${id})">Comprar Producto</button>
+    </div>
+  </div>
+    `;
+  }
+});
+
+const agregarProducto = (id) => {
+  const existe = carrito.some(prod => prod.id === id)
+
+  if(existe){
+    const prod = carrito.map(prod => {
+      if(prod.id === id){
+        prod.cantidad++
+      }
+    })
+  } else {
+    const item = stockProductos.find((prod) => prod.id === id)
+    carrito.push(item)
+  }
+  mostrarCarrito()
+
+};
+
+const mostrarCarrito = () => {
+  const modalBody = document.querySelector(".modal .modal-body");
+  if (modalBody) {
+    modalBody.innerHTML = "";
+    carrito.forEach((prod) => {
+      const { id, nombre, precio, desc, img, cantidad } = prod;
+      console.log(modalBody);
+      modalBody.innerHTML += `
+      <div class="modal-contenedor">
+        <div>
+        <img class="img-fluid img-carrito" src="${img}"/>
+        </div>
+        <div>
+        <p>Producto: ${nombre}</p>
+      <p>Precio: ${precio}</p>
+      <p>Cantidad :${cantidad}</p>
+      <button class="btn btn-danger"  onclick="eliminarProducto(${id})">Eliminar producto</button>
+        </div>
+      </div>
+      
+  
+      `;
+    });
+  }
+
+  if (carrito.length === 0) {
+    console.log("Nada");
+    modalBody.innerHTML = `
+    <p class="text-center text-primary parrafo">¡Aun no agregaste nada!</p>
+    `;
+  } else {
+    console.log("Algo");
+  }
+  carritoContenedor.textContent = carrito.length;
+
+  if (precioTotal) {
+    precioTotal.innerText = carrito.reduce(
+      (acc, prod) => acc + prod.cantidad * prod.precio,
+      0
+    );
+  }
+
+  guardarStorage();
+};
+
+function guardarStorage() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+function eliminarProducto(id) {
+  const juegoId = id;
+  carrito = carrito.filter((juego) => juego.id !== juegoId);
+  mostrarCarrito();
+}
+function procesarPedido() {
+  carrito.forEach((prod) => {
+    const listaCompra = document.querySelector("#lista-compra tbody");
+    const { id, nombre, precio, img, cantidad } = prod;
+    if (listaCompra) {
+      const row = document.createElement("tr");
+      row.innerHTML += `
+              <td>
+              <img class="img-fluid img-carrito" src="${img}"/>
+              </td>
+              <td>${nombre}</td>
+            <td>${precio}</td>
+            <td>${cantidad}</td>
+            <td>${precio * cantidad}</td>
+            `;
+      listaCompra.appendChild(row);
+    }
+  });
+  totalProceso.innerText = carrito.reduce(
+    (acc, prod) => acc + prod.cantidad * prod.precio,
+    0
+  );
+}
+
+ function enviarCompra(e){
+   e.preventDefault()
+   const cliente = document.querySelector('#cliente').value
+   const email = document.querySelector('#correo').value
+
+   if(email === '' || cliente == ''){
+     Swal.fire({
+       title: "¡Debes completar tu email y nombre!",
+       text: "Rellena el formulario",
+       icon: "error",
+       confirmButtonText: "Aceptar",
+   })
+ } else {
+
+  const btn = document.getElementById('button');
+
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_qxwi0jn';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Finalizar compra';
+      alert('Correo enviado!');
+    }, (err) => {
+      btn.value = 'Finalizar compra';
+      alert(JSON.stringify(err));
+    });
     
-    const producto = productosStock.find((item) => item.id === id)
-    carrito.push(producto)
-    renderCarrito()    
-}
+   const spinner = document.querySelector('#spinner')
+   spinner.classList.add('d-flex')
+   spinner.classList.remove('d-none')
+
+   setTimeout(() => {
+     spinner.classList.remove('d-flex')
+     spinner.classList.add('d-none')
+     formulario.reset()
+
+     const alertExito = document.createElement('p')
+     alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'col-12', 'mt-2', 'alert-success')
+     alertExito.textContent = 'Compra realizada correctamente'
+     formulario.appendChild(alertExito)
+
+     setTimeout(() => {
+       alertExito.remove()
+     }, 3000)
 
 
+   }, 3000)
+ }
+ localStorage.clear()
 
-
-const guardarC = (key,value) => {localStorage.setItem(key,value)}
-
-const actCarrito = () => {
-    contenedorCarrito.innerHTML = ''
-    carrito.forEach((producto) => {
-    const div = document.createElement ('div')
-    div.className = "productCarrito"
-    div.innerHTML = `
-    <div class="productCarrito">
-      <p>${producto.name}</p>
-      <p>${producto.precio}</p>
-      <img src="./assets/delete.png" class="icono" id="borrar"></img>
-    </div>
-    `
-    contenedorCarrito.append(div)
-    })
-} 
-
-
-const TotalCarrito = () =>{
-    let total = 0
-
-    carrito.forEach ((producto) => {
-        total+= producto.precio
-    })
-    contadorPrecioTotal.innerText = total
-}
-
+ }

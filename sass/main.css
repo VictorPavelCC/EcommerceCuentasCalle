@@ -19,6 +19,25 @@
   font-family: "roboto Mono", monospace;
 }
 
+.cart {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #313892;
+  text-shadow: 0.1cm 0.1cm 0.1cm black;
+  color: #ff3300;
+  font-size: 20px;
+  font-family: "roboto Mono", monospace;
+  font-weight: bold;
+}
+
+.cart:hover {
+  background-color: rgba(255, 196, 0, 0.8705882353);
+  border-radius: 10px;
+  transition: 0.8s;
+  color: #e7e7e7;
+}
+
 .fondoP {
   background-color: #313892;
   color: #ff3300;
@@ -94,6 +113,11 @@
   visibility: hidden;
 }
 
+.boton {
+  text-align: center;
+  padding: 5px 35% 5px 35%;
+}
+
 .show {
   opacity: 1;
   visibility: visible;
@@ -122,6 +146,51 @@
   font-size: 13px;
   padding: 20px;
   text-align: center;
+}
+
+.imagen {
+  max-width: 100%;
+}
+
+a {
+  cursor: pointer;
+}
+
+.alerta {
+  font-weight: 700;
+}
+
+.modal-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.img-carrito {
+  width: 150px;
+}
+
+.modal-content {
+  background-color: #E3D8D6;
+}
+
+.parrafo {
+  font-weight: 900;
+  font-style: italic;
+}
+
+#precioTotal {
+  margin: 0;
+  padding: 0;
+}
+
+.boton {
+  opacity: 0;
+}
+
+#contenedor {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @media (max-width: 767px) {

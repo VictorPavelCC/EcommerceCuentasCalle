@@ -44,6 +44,26 @@
         
 }
 
+.cart{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: $ColorHF;
+    text-shadow: $Sombra;
+    color: $ColorTitulo;
+    font: {
+        size: 20px;
+        family: $FontTexto ;
+        weight: bold;
+    }
+}
+
+.cart:hover{
+    background-color: $ColorEfect;
+    border-radius: 10px;
+    transition: .8s;
+    color: #e7e7e7;
+}
 
 .fondoP {
     background-color: #313892;

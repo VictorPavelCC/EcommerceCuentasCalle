@@ -24,8 +24,9 @@ if (activarFuncion) {
 
 document.addEventListener("DOMContentLoaded", () => {
   carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  mostrarCarrito( );
+  
   document.querySelector("#activarFuncion").click(procesarPedido);
+  mostrarCarrito();
 });
 if(formulario){
   formulario.addEventListener('submit', enviarCompra)
@@ -181,21 +182,23 @@ function procesarPedido() {
  } else {
 
   const btn = document.getElementById('button');
-
-
-   btn.value = 'Enviando...';
-
-   const serviceID = 'default_service';
-   const templateID = 'template_qxwi0jn';
-
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Finalizar compra';
-      alert('Correo enviado!');
-    }, (err) => {
-      btn.value = 'Finalizar compra';
-      alert(JSON.stringify(err));
-    });
+ 
+        
+        
+            btn.value = 'Sending...';
+        
+            const serviceID = 'default_service';
+            const templateID = 'template_of29vg5';
+        
+            emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                btn.value = 'Send Email';
+                alert('Sent!');
+            }, (err) => {
+                btn.value = 'Send Email';
+                alert(JSON.stringify(err));
+            });
+        }
     
    const spinner = document.querySelector('#spinner')
    spinner.classList.add('d-flex')
@@ -220,4 +223,4 @@ function procesarPedido() {
  }
  localStorage.clear()
 
- }
+ 

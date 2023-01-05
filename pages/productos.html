@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="../sass/main.css">
+    <link
+      rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"/>
   </head>
 <body>
   <header class="menu" id="menu">
@@ -31,13 +33,15 @@
                 <a class="nav-link px-3" href="#">Productos</a>
               </li>
               <li class="nav-item colorEF">
-                <a class="nav-link px-3 " href="pcarmada.html">PC armada</a>
-              </li>
-              <li class="nav-item colorEF">
                 <a class="nav-link px-3" href="nosotros.html">Nosotros</a>
               </li>
               <li class="nav-item colorEF">
                 <a class="nav-link px-3" href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item colorEF">
+                    
+                <a class="nav-link colorEF" data-bs-toggle="modal" data-bs-target="#modal"><i class="bi bi-cart mx-5" id="carritoContenedor">0</i></a>
+                
               </li>
             </ul>
           </div>
@@ -46,133 +50,45 @@
 </header>
 
     <h2 class="titulo">Productos</h2>
-    <section class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-md-3 col-sm-6 py-3 align-self-center">
-            <div class="producto">
-                <img src="../assets/gtx1660super6gb.jpg" alt="Placa Gtx 1660" class="imgProductos">
-                <p>GEFORCE GTX 1660 SUPER 6GB OC</p>
-                <p class="precio">$74.960,00</p>
-                <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6 py-3">
-            <div class="producto">
-                <img src="../assets/video-geforce-rtx-3050-8gb-msi-ventus-2x-oc-0.jpg" alt="rtx 3050">
-                <p>GEFORCE RTX 3050 8GB OC</p>
-                <p class="precio">$97.680,00</p>
-                <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6 py-3">
-            <div class="producto">
-                <img src="../assets/intelcorei310th.jpg" alt="intel I3 10th">
-                <p>Intel Core I3 10105 3.7 GHZ</p>
-                <p class="precio">$27.741,00</p>
-                <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-            </div>
-        </div>
-        
-        <div class="col-md-3 col-sm-6 py-3">
-            <div class="producto">
-                <img src="../assets/video-radeon-rx-6600-xt-8gb-asrock-challenger-d-0.jpg" alt="RX 6600 8GB">
-                <p>RADEON RX 6600 XT 8GB CHALLENGER D</p>
-                <p class="precio">$116.640,00</p>
-                <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-            </div>
-        </div>
-
-    </div>
-    <div class="row align-items-center">
-        <div class="col-md-3 col-sm-6 py-3">
-            <div class="producto">
-                <img src="../assets/micro-amd-ryzen-5-5600g-0.jpg" alt="Ryzen 5 5600g">
-                <p>AMD RYZEN 5 5600G</p>
-                <p class="precio">$39.590,00</p>
-                <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6 py-3">
-            <div class="producto">
-                <img src="../assets/hd-hdd-1tb-wd-blue-sata-iii-35-0.jpg" alt="HDD 1TB WD">
-                <p>HD HDD 1TB WD BLUE SATA III 3.5"</p>
-                <p class="precio">$8.630,00</p>
-                <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6 py-3">
-            <div class="producto">
-                <img src="../assets/hd-ssd-240gb-kingston-a400-sata-iii-25-0.jpg" alt="SSD 240GB KINGSTON">
-                <p>HD SSD 240GB KINGSTON A400</p>
-                <p class="precio">$5.310,00</p>
-                <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6 py-3">
-            <div class="producto">
-                <img src="../assets/memoria-16gb-ddr4-3200-kingston-fury-beast-rgb-0.jpg" alt="RAM DDR4 KINGSTON">
-                <p>RAM 16GB DDR4 3200 KINGSTON RGB</p>
-                <p class="precio">$22.340,00</p>
-                <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6 py-3">
-            <div class="producto">
-                <img src="../assets/fuente-500w-thermaltake-smart-white-80-plus-1.jpg" alt="Fuente 500w THERMALTAKE">
-                <p>FUENTE 500W THERMALTAKE WHITE</p>
-                <p class="precio">$11.150,00</p>
-                <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-6 py-3">
-          <div class="producto">
-              <img src="../assets/gabinete-cromax-8801-gamer-absrgb-s-fuente-0.jpg" alt="GABINETE GAMER">
-              <p>GABINETE CROMAX 8801 GAMER ABS</p>
-              <p class="precio">$11.819,00</p>
-              <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 py-3">
-          <div class="producto">
-              <img src="../assets/mother-asrock-z390-phantom-gaming-4-0.jpg" alt="motherboard asrock z390">
-              <p>MOTHER ASROCK Z390 PHANTOM GAMING 4</p>
-              <p class="precio">$16.660,00</p>
-              <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6 py-3">
-          <div class="producto">
-              <img src="../assets/watercooler-evga-clc-280-cpu-rgb-led-0.jpg" alt="WATERCOOLER EVGA CLC 280">
-              <p>WATERCOOLER EVGA CLC 280 CPU RGB</p>
-              <p class="precio">$30.300,00</p>
-              <button type="button" class="btn fondoB" data-bs-toggle="modal" data-bs-target="#comprar">comprar</button>
-        </div>
-        
-        
-    </div>
+    <main class="ContProd">
+      <div class="row mt-5" id="contenedor"></div>
+    </main>
 
 
-
-
-
-
-    <div class="modal fade" tabindex="-1" id="comprar">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Carrito</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Tu compra ha sido añadida al carrito</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn fondoP" data-bs-dismiss="modal">Entendido</button>
-            
+    <div class="container-x1">
+      <div class="modal" tabindex="-1" role="dialog" id="modal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Carrito</h5>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="vaciarCarrito">
+                Vaciar carrito
+              </button>
+              <button type="button" id="procesarCompra" class="btn colorEF fondoP">
+                Continuar compra
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+  
+              <span>Precio total:</span>
+              <p class="text-center" id="precioTotal"></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+
+
+    
     </section>    
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
       <symbol id="facebook" viewBox="0 0 16 16">
@@ -184,6 +100,7 @@
       <symbol id="twitter" viewBox="0 0 16 16">
         <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
       </symbol>
+      <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
     </svg>
 
     <footer class="d-flex flex-wrap justify-content-center align-items-center py-2 border-top fondoP">
@@ -200,6 +117,9 @@
         <li class="ms-3"><a class="text-muted" href="https://es-la.facebook.com/"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
       </ul>
     </footer>
+    <script src="../js/productos.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

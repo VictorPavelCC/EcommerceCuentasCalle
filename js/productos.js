@@ -53,7 +53,7 @@ const stockProductos = [
         nombre:"RAM 16GB DDR4 3200 KINGSTON RGB", 
         precio:22340,
         cantidad: 1,
-        img:"./assets/memoria-16gb-ddr4-3200-kingston-fury-beast-rgb-0.jpg"
+        img:"../assets/memoria-16gb-ddr4-3200-kingston-fury-beast-rgb-0.jpg"
     },
     {
         id:9,

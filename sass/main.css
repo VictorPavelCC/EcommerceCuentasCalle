@@ -193,6 +193,15 @@ a {
   justify-content: space-evenly;
 }
 
+.imagen {
+  max-width: 1000px;
+}
+
+#perros {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 767px) {
   .producto {
     width: 100%;
@@ -241,6 +250,9 @@ a {
   }
   .nosotros {
     font-size: 20px;
+  }
+  .imagen {
+    margin-left: 25%;
   }
 }
 body {

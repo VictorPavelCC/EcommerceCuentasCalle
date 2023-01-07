@@ -1,11 +1,5 @@
 
 
-/* 
-mi proyecto trata de un login de usuario, y un carrito para la pagina que tengo creada del curso de desarrollo web
-
-*/
-
-
 //DOM
 let carrito =  [];
 
@@ -50,7 +44,7 @@ if (procesarCompra) {
         confirmButtonText: "Aceptar",
       });
     } else {
-      location.href = "./pages/compra.html";
+      location.href = "../pages/compra.html";
     }
   });
 }
@@ -63,7 +57,7 @@ stockProductos.forEach((prod) => {
     <img class="card-img-top mt-2" src="${img}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">${nombre}</h5>
-      <p class="card-text">Precio: ${precio}</p>
+      <p class="card-text">Precio:${precio}</p>
       <p class="card-text">Cantidad: ${cantidad}</p>
       <button class="btn fondoP" onclick="agregarProducto(${id})">Comprar Producto</button>
     </div>
@@ -115,12 +109,10 @@ const mostrarCarrito = () => {
   }
 
   if (carrito.length === 0) {
-    console.log("Nada");
+    
     modalBody.innerHTML = `
     <p class="text-center text-primary parrafo">¡Aun no agregaste nada!</p>
     `;
-  } else {
-    console.log("Algo");
   }
   carritoContenedor.textContent = carrito.length;
 
@@ -166,6 +158,8 @@ function procesarPedido() {
     0
   );
 }
+grax()
+
 
  function enviarCompra(e){
    e.preventDefault()
@@ -181,10 +175,9 @@ function procesarPedido() {
    })
  } else {
 
+
   const btn = document.getElementById('button');
- 
-        
-        
+
             btn.value = 'Sending...';
         
             const serviceID = 'default_service';
@@ -193,7 +186,6 @@ function procesarPedido() {
             emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
                 btn.value = 'Send Email';
-                alert('Sent!');
             }, (err) => {
                 btn.value = 'Send Email';
                 alert(JSON.stringify(err));
@@ -213,7 +205,6 @@ function procesarPedido() {
      alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'col-12', 'mt-2', 'alert-success')
      alertExito.textContent = 'Compra realizada correctamente'
      formulario.appendChild(alertExito)
-
      setTimeout(() => {
        alertExito.remove()
      }, 3000)
@@ -223,4 +214,21 @@ function procesarPedido() {
  }
  localStorage.clear()
 
- 
+
+
+
+  async function grax () {
+
+    const resp = await fetch('https://dog.ceo/api/breeds/image/random')
+    const data = await resp.json()
+    
+    
+    const div = document.querySelector('#perros')
+    div.innerHTML=`
+    <h3 class="titulo"> Estos amables perritos te desean una buena compra </h3>
+    <img class="imagen" src='${data.message}'/>
+    `
+    div.append()
+ }
+
+grax()
